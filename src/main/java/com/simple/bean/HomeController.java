@@ -1,4 +1,7 @@
-package com.simple;
+package com.simple.bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -9,9 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class HomeController {
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/book", method = RequestMethod.GET)
 	public String index(ModelMap model) {
-		model.addAttribute("message", "Spring MVC XML");
+		List<String> list = new ArrayList<String>();
+		list.add("Sergey");
+		list.add("Alex");
+		list.add("Igor");
+		model.addAttribute("message", list);
 		return "index";
 	}
 }
