@@ -1,0 +1,7 @@
+#@main()
+	<ul>
+		#foreach( $product in $message )
+		    <li>$product</li>
+		#end		
+	</ul>
+#end
