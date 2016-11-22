@@ -1,0 +1,5 @@
+#parse("layout/main.vm")
+#@main()
+	<h1>$category.id - $category.name - $category.description</h1>
+	<a href='#deleteUrl("category", $category.id)'>Delete</a>		
+#end

@@ -1,0 +1,11 @@
+#macro( showAllUrl $entity)
+  #springUrl("/$entity")
+#end
+
+#macro( showByIdUrl $entity $id )
+  #springUrl("/$entity/$id")
+#end
+
+#macro( deleteUrl $entity $id )
+  #springUrl("/$entity/delete/$id")
+#end

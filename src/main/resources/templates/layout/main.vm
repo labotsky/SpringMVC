@@ -1,5 +1,6 @@
 #macro(main)
-#parse("header.vm")
+#parse("layout/header.vm")
 	$!bodyContent
-#parse("footer.vm")
+#parse("layout/footer.vm")
+#parse("layout/macros.vm")
 #end

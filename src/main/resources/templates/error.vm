@@ -1,0 +1,4 @@
+#parse("layout/main.vm")
+#@main()
+	<h1>Error!</h1>
+#end

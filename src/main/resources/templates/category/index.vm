@@ -1,0 +1,14 @@
+#parse("layout/main.vm")
+#@main()
+	<ul>
+		#foreach( $category in $categoryList )
+		    <li>
+		    <p>$category.id</p>
+		    <p>$category.name</p>
+		    <p>$category.description</p>
+		    <a href='#deleteUrl("category", $category.id)'>Delete</a>		
+		    <a href='#showByIdUrl("category", $category.id)'>Show</a>
+		    </li>				
+		#end
+	</ul>
+#end
