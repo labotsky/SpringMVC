@@ -1,28 +1,30 @@
 #parse("layout/main.vm")
 #@main()
 	<div class="container">
-	    <table class="table table-striped custab">
-	    <thead>
-	    <a href="#springUrl("/category/add")" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
-	        <tr>
-	            <th>ID</th>
-	            <th>Title</th>
-	            <th>Description</th>
-	            <th class="text-center">Action</th>
-	        </tr>
-	    </thead>
-	    #foreach( $category in $categoryList)
-            <tr>
-                <td>$category.id</td>
-                <td>$category.name</td>
-                <td>$category.description</td>
-                <td class="text-center">
-                <a href="#showByIdUrl("category", $category.id)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-th"></span> View</a>
-                <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                <a href="#deleteUrl("category", $category.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
-		#end
-	    </table>
+		<a href="#springUrl("/category/add")" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
+		#if($categoryList.size() != 0)
+		    <table class="table table-striped custab">
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Title</th>
+		            <th>Description</th>
+		            <th class="text-center">Action</th>
+		        </tr>
+		    </thead>
+		    #foreach( $category in $categoryList)
+	            <tr>
+	                <td>$category.id</td>
+	                <td>$category.name</td>
+	                <td>$category.description</td>
+	                <td class="text-center">
+	                <a href="#showByIdUrl("category", $category.id)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-th"></span> View</a>
+	                <a class='btn btn-info btn-xs' href="#editUrl("category", $category.id)"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+	                <a href="#deleteUrl("category", $category.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
+	                </td>
+	            </tr>
+			#end
+		    </table>
+	    #end
     </div>
 #end

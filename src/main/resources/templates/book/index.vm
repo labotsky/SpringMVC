@@ -1,0 +1,36 @@
+#parse("layout/main.vm")
+#@main()
+	<div class="container">
+		<a href="#springUrl("/book/add")" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new book</a>
+		#if($bookList.size() != 0)
+		    <table class="table table-striped custab">
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Title</th>
+		            <th>Description</th>
+		            <th>ISBN</th>
+		            <th>Date</th>
+		            <th>Category</th>
+		            <th class="text-center">Action</th>
+		        </tr>
+		    </thead>
+		    #foreach( $book in $bookList)
+	            <tr>
+	                <td>$book.id</td>
+	                <td>$book.title</td>
+	                <td>$book.description</td>
+	                <td>$book.isbn</td>
+	                <td>$book.date</td>
+	                <td>$book.category.name</td>
+	                <td class="text-center">
+	                <a href="#showByIdUrl("book", $book.id)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-th"></span> View</a>
+	                <a class='btn btn-info btn-xs' href="#editUrl("book", $book.id)"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+	                <a href="#deleteUrl("book", $book.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
+	                </td>
+	            </tr>
+			#end
+		    </table>
+	    #end
+    </div>
+#end

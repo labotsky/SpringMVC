@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet"
-			href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">	
-		<link href="#springUrl('/resources/css/style.css')" rel="stylesheet" type="text/css" />		
-		<link rel="stylesheet"
-			href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>		
-		<script type="text/javascript" 
-				src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>		
-		<script
-			src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>		
+		<link href="#springUrl('/resources/css/style.css')" rel="stylesheet" type="text/css" />	
+		<link href="#springUrl('/resources/css/bootstrap.css')" rel="stylesheet" type="text/css" />		
+		<link href="#springUrl('/resources/css/bootstrap-datetimepicker.css')" rel="stylesheet" type="text/css" />	
+		
+		<script src="#springUrl('/resources/js/jquery-1.8.3.min.js')"></script>	
+		<script src="#springUrl('/resources/js/bootstrap.min.js')"></script>	
+		<script src="#springUrl('/resources/js/bootstrap-datetimepicker.js')"></script>
+		<script src="#springUrl('/resources/js/script.js')"></script>	
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Spring Framework</title>
 	</head>
@@ -29,10 +28,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                  <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#springUrl('/about')">About</a>
+                        <a href="#springUrl('/category')">Categories</a>
                     </li>
                     <li>
-                        <a href="#springUrl('/services')">Services</a>
+                        <a href="#springUrl('/book')">Books</a>
                     </li>
                     <li>
                         <a href="#springUrl('/contact')">Contact</a>

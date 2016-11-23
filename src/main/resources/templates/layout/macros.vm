@@ -9,3 +9,21 @@
 #macro( deleteUrl $entity $id )
   #springUrl("/$entity/delete/$id")
 #end
+
+#macro( editUrl $entity $id )
+  #springUrl("/$entity/edit/$id")
+#end
+
+#macro( showErrors )
+	<br>
+	#springShowErrors("<br>" "color:red;font-weight:bold;")
+#end
+
+#macro( inputValue $val )
+	#if(!$val == "")
+		$val
+	#end
+#end
+
+
+

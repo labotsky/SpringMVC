@@ -1,0 +1,43 @@
+#parse("layout/main.vm")
+#@main()
+<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<h1>New book</h1>
+				<form action="#springUrl("/book/save")" method="POST"> 
+				<div class="form-group">
+				    <label for="title">Title:</label><br>
+				    #springFormInput("book.title",'placeholder="Enter book title" class="form-control"')
+				    #showErrors
+	  			</div>
+				<div class="form-group">
+				    <label for="description">Description:</label><br>
+				    #springFormInput("book.description",'placeholder="Enter book description" class="form-control"')
+				    #showErrors
+	  			</div>
+	  			<div class="form-group">
+				    <label for="isbn">Isbn:</label><br>
+				    #springFormInput("book.isbn",'placeholder="Enter book isbn" class="form-control"')
+				    #showErrors
+	  			</div>
+	  			<div class="form-group">
+				    <label for="category">Category:</label><br>
+				    #springFormSingleSelect("book.category" ${categoryOptions}, 'class="form-control"')
+				    #showErrors
+	  			</div>
+	  			#springBind("book.date")
+				<div class="form-group">
+	                <label for="date">Date</label><br>
+	                <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd">
+	                    <input class="form-control" name="date" size="16" type="text" value="$!book.date" readonly>	                   
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>						
+	                </div>
+	                 #showErrors
+            	</div>
+			    <button type="submit" class="btn btn-success">Create</button>
+	    		</form>					
+			</div>
+		</div>
+	</div>
+#end

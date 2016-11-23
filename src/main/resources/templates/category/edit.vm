@@ -3,21 +3,23 @@
 <div class="container">
 		<div class="row">
 		<div class='col-sm-6'>
-			<h1>New category</h1>
-			<form action="#springUrl("/category/save")" method="POST"> 
+			<h1>Edit category</h1>
+			<form action="#springUrl("/category/update")" method="POST"> 
+			#springFormHiddenInput("category.id","")
 			<div class="form-group">
-			    <label for="name">Name:</label><br>
+			    <label for="name">Name:</label>
 			    #springFormInput("category.name",'placeholder="Enter name" class="form-control"')
 			    #showErrors
   			</div>
 			<div class="form-group">
-			    <label for="description">Description:</label><br>
+			    <label for="description">Description:</label>
 			    #springFormInput("category.description",'placeholder="Enter description" class="form-control"')
 			    #showErrors
   			</div>
-		    <button type="submit" class="btn btn-success">Create</button>
+		    <button type="submit" class="btn btn-success">Update</button>
     		</form>					
 		</div>
 		</div>
 	</div>
 #end
+
